@@ -6,6 +6,8 @@ module.exports = {
       background: "#242A32",
       active: "#0296E5",
       lightGray: "#67686D",
+      lightBlack: "#3A3F47",
+      white: "#FAFAFA",
     },
   },
   plugins: [],
