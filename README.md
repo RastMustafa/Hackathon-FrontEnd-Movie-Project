@@ -1,4 +1,5 @@
 This Project was part of Hackathon participation in Karabuk Uni at 12/17/2022
+used Technologies : Nextjs , tailwindCss , Pritter ,Eslint
 
 Note For Judges : Changes Only Happened on the readme File after the Hackathon Finished. there are some feature that I couldn't finish due the time .
 
