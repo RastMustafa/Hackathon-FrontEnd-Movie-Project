@@ -21,11 +21,11 @@ function SearchBar() {
     }
   }
   return (
-    <div className="flex flex-row-reverse items-center w-full h-[42px] rounded-lg focus-within:shadow-lg overflow-hidden">
+    <div className="flex text-white flex-row-reverse items-center w-full h-[42px] rounded-lg focus-within:shadow-lg overflow-hidden">
       <Link href={`${inputValue}` === "" ? "/" : `/search?query=${inputValue}`}>
         <div
           onClick={() => handleSearchQuery()}
-          className="grid bg-lightBlack place-items-center rounded-2xl -ml-8 h-full w-12 text-gray-300"
+          className="grid pr-4 place-items-center rounded-2xl -ml-8 h-full w-12 text-gray-300"
         >
           <FiSearch />
         </div>
