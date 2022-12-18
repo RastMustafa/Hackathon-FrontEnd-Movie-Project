@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import axios from "axios";
 function TopRatedMovies() {
   const [data, setData] = useState();
@@ -31,8 +32,12 @@ function TopRatedMovies() {
         {data.map((movie, i) => {
           return (
             <div key={i} className="mx-6  relative w-[9.1rem] shadow-xl   h-[13.125rem]  ">
+              <Link href ={`/detail/${movie.id}`}>
+              <div>
               <img className=" w-full rounded-xl" src={`${PROFILE_BASE_URL}${movie.poster_path}`} alt="" />;
               <div className="absolute  -bottom-12 -left-4 z-10 text-lightGray text-[96px]">{i + 1}</div>
+              </div>
+              </Link>
             </div>
           );
         })}

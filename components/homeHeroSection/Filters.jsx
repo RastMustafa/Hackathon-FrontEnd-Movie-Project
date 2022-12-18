@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import React from "react";
 import { useState, useEffect } from "react";
 const BASE_URL = "https://api.themoviedb.org/3/movie/";
@@ -14,7 +15,7 @@ function Filters() {
       try {
         const defualtFilter = "popular";
         const movies = await axios.get(`${BASE_URL}${defualtFilter}${API_KEY}`);
-        console.log(movies.data.results);
+        console.log(movies);
         setDisplayedMovies(movies.data.results);
         setIsLoading(false);
       } catch (error) {
@@ -29,7 +30,7 @@ function Filters() {
     console.log(filter);
     try {
       const movies = await axios.get(`${BASE_URL}${filter}${API_KEY}`);
-      console.log(movies);
+      console.log(movies.data.results);
       setDisplayedMovies(movies.data.results);
       setIsLoading(false);
     } catch (error) {
@@ -56,7 +57,9 @@ function Filters() {
         {displayedMovies.map((movie, i) => {
           return (
             <div key={i} className="mx-2    shadow-xl    ">
-              <img className=" w-full rounded-xl" src={`${PROFILE_BASE_URL}${movie.poster_path}`} alt="" />;
+              <Link href={`/detail/${movie.id}`}>
+                <img className=" w-full rounded-xl" src={`${PROFILE_BASE_URL}${movie.poster_path}`} alt="" />;
+              </Link>
             </div>
           );
         })}
